@@ -16,3 +16,35 @@ With that its now been brought to Luau.
 
 `None`
 
+
+# Usage
+
+First you will need to create a Parcel object
+
+
+```lua
+local Vendr = require(path/to/vendr)
+```
+
+Then, you may now use these features!
+
+**GetUserInformation**
+
+`self.GetUserInformation({method : string, id : number})`
+
+```lua
+local Vendr = require(path/to/vendr)
+
+Vendr.GetUserInformation('roblox',"000000")
+
+```
+
+**GetLinkCode**
+
+`self.GetLinkCode({robloxID: number})`
+
+```lua
+local Vendr = require(path/to/vendr)
+
+Vendr.GetLinkCode(robloxID: number)
+```
