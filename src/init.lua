@@ -103,13 +103,15 @@ function SDK.GetUserLicense(hubID : string, method :  string, id : number, produ
 
 end
 
-function SDK.CreateUserLicense(hubID : string, method :  string, id : number, productname : number, apiKey:string)
-
-	local URL = BASE_URL .. 'licences/getlicence/'..hubID..'/'..method..'/'..id..'/?key='..apiKey..'&productName="'..productname..'"' -- /licences/createlicence/:ClientType/:Identification/?key=(apikey)&productName=("productname")
+function SDK.CreateUserLicense(method :  string, id : number, DeliveryOption : boolean, apiKey:string)
+	local URL = BASE_URL .. 'licences/createlicense/'..method..'/'..id..'?Delivery='..DeliveryOption..'&ProductName="'..productname..'"' -- /licences/createlicence/:ClientType/:Identification/?key=(apikey)&productName=("productname")
 	local response = fetch:RequestAsync(
 		{
 			Url = URL,
-			Method = "POST"
+			Method = "POST",
+			Headers = {
+				["Authentication"] = apiKey
+			}
 		}
 	);
 	return print(response)
