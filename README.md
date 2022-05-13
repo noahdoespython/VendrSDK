@@ -65,6 +65,12 @@ Vendr.LinkDiscordAccount('8464',"80247589956346753")
 
 
 #
+
+
+This is **very** buggy. Do not rely on this too much.
+
+#
+
 **GetHubInfo**
 
 `self.GetHubInfo(apiKey : number)`
